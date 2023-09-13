@@ -19,7 +19,6 @@ class TrainDataset(Dataset):
         return self.train_len
 
     def __getitem__(self, index):
-        #返回训练数据:[预测序列；协变量序列*3] ;  变量序号1-370  ; 标签值
         return (self.data[index,:, :-1],int(self.data[index,0, -1]), self.label[index])
         #return (self.data[index,:,:,:-1],self.data[index,:,0, -1].astype(int), self.label[index])
 
