@@ -21,9 +21,9 @@ Time series forecasting is crucial for many fields, such as disaster warning, we
 * Loss function
 
 $$ \mathcal{L}= \gamma \mathcal{L}_{NLL}+\beta \mathcal{L}_{KL} +  \mathcal{L}_{R}.$$
-$$ \mathcal{L}_{NLL} = \sum_{t} l\left(Y_{t} \mid \mu_{t}, \sigma_{t}\right).$$
+$$ \mathcal{L}_{NLL} = -\sum_{t} \text{log }l\left(Y_{t} \mid \mu_{t}, \sigma_{t}\right).$$
 $$\mathcal{L}_{KL} = D_{K L}\left(q_{\phi}\left(z \mid Y_{1: t_{0}}, \mu_{t_{0}+1: t_{0}+\tau}\right) \| p_{\theta}\left(z \mid Y_{1: t_{0}}\right)\right). $$
-$$\mathcal{L}_{R} =  \sum_{t} l'\left(\hat{Y}_{t} \mid \hat{\mu}_{t}, \hat{\sigma}_{t}\right).$$
+$$\mathcal{L}_{R} =  -\sum_{t} \text{log }l'\left(\hat{Y}_{t} \mid \hat{\mu}_{t}, \hat{\sigma}_{t}\right).$$
 ## Requirements
 * Python 3.8
 * PyTorch 1.8
